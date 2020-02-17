@@ -50,6 +50,9 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                <p id="passwordHelpBlock" class="form-text text-muted" style="display: none;">
+                                        Your password must be more than 8 characters long, should contain at-least 1 Uppercase, 1 Lowercase, 1 Numeric and 1 special character.
+                                </p>
                             </div>
                         </div>
 
@@ -74,4 +77,18 @@
         </div>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+ 
+    $(document).ready(function(){
+        $('#password').focus(function(){
+            $('#passwordHelpBlock').show();
+        });
+
+        
+        $('#password').blur(function(){
+            $('#passwordHelpBlock').css('display','none');
+        });
+    }); 
+</script>
 @endsection
